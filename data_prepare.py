@@ -47,43 +47,42 @@ def rewrite_label(annos, dst_folder, is_plane = False):
 def creat_tree(root_dir):
     if not os.path.exists(root_dir):
         raise RuntimeError('invalid dataset path!')
-    # os.mkdir(os.path.join(root_dir, 'AllImages'))
-    # os.mkdir(os.path.join(root_dir, 'labelTxt'))
-    # os.mkdir(os.path.join(root_dir, 'ImageSets'))
+    os.mkdir(os.path.join(root_dir, 'AllImages'))
+    os.mkdir(os.path.join(root_dir, 'Annotations'))
+    os.mkdir(os.path.join(root_dir, 'ImageSets'))
     car_imgs = glob.glob(os.path.join(root_dir, 'CAR/*.png'))
     car_annos = glob.glob(os.path.join(root_dir, 'CAR/P*.txt'))
     airplane_imgs = glob.glob(os.path.join(root_dir, 'PLANE/*.png'))
     airplane_annos = glob.glob(os.path.join(root_dir, 'PLANE/P*.txt'))   
-    # copyfiles(car_imgs,  os.path.join(root_dir, 'AllImages') ) 
-    # copyfiles(airplane_imgs,  os.path.join(root_dir, 'AllImages'), True)
-    rewrite_label(car_annos, os.path.join(root_dir, 'labelTxt'))
-    rewrite_label(airplane_annos, os.path.join(root_dir, 'labelTxt'), True)
+    copyfiles(car_imgs,  os.path.join(root_dir, 'AllImages') ) 
+    copyfiles(airplane_imgs,  os.path.join(root_dir, 'AllImages'), True)
+    rewrite_label(car_annos, os.path.join(root_dir, 'Annotations'))
+    rewrite_label(airplane_annos, os.path.join(root_dir, 'Annotations'), True)
 
-
-def generate_imageset_file(root_dir):
-    split_ratio=[0.5, 0.2, 0.3]
-    train_r, val_r, test_r = split_ratio
-    car = set([x for x in range(1,511)])
-    airplane = set([x for x in range(511, 1511)])
-    train_car = set(random.sample(car,int(510 * train_r)))
-    val_car = set(random.sample(car - train_car,int(510 * val_r)))
-    test_car = car - val_car - train_car
-    train_airplane = set(random.sample(airplane,int(1000 * train_r)))
-    val_airplane = set(random.sample(airplane - train_airplane,int(1000 * val_r)))
-    test_airplane = airplane - val_airplane - train_airplane
-    train_idx = train_car | train_airplane
-    val_idx = val_car | val_airplane
-    test_idx = test_car | test_airplane
-    with open(os.path.join(root_dir, 'ImageSets/train.txt'), 'w') as f1:
-        s1 = '\n'.join(['P' + str(x).zfill(4) for x in train_idx])
-        f1.write(s1)
-    with open(os.path.join(root_dir, 'ImageSets/val.txt'), 'w') as f2:
-        s2 = '\n'.join(['P' + (str(x)).zfill(4) for x in val_idx])
-        f2.write(s2)
-    with open(os.path.join(root_dir, 'ImageSets/test.txt'), 'w') as f3:
-        s3 = '\n'.join(['P' + str(x).zfill(4) for x in test_idx])
-        f3.write(s3)
-
+# DON'T run this function, casuse you cannot make sure the same result will be generated.
+# def generate_imageset_file(root_dir):
+#     split_ratio=[0.5, 0.2, 0.3]
+#     train_r, val_r, test_r = split_ratio
+#     car = set([x for x in range(1,511)])
+#     airplane = set([x for x in range(511, 1511)])
+#     train_car = set(random.sample(car,int(510 * train_r)))
+#     val_car = set(random.sample(car - train_car,int(510 * val_r)))
+#     test_car = car - val_car - train_car
+#     train_airplane = set(random.sample(airplane,int(1000 * train_r)))
+#     val_airplane = set(random.sample(airplane - train_airplane,int(1000 * val_r)))
+#     test_airplane = airplane - val_airplane - train_airplane
+#     train_idx = train_car | train_airplane
+#     val_idx = val_car | val_airplane
+#     test_idx = test_car | test_airplane
+#     with open(os.path.join(root_dir, 'ImageSets/train.txt'), 'w') as f1:
+#         s1 = '\n'.join(['P' + str(x).zfill(4) for x in train_idx])
+#         f1.write(s1)
+#     with open(os.path.join(root_dir, 'ImageSets/val.txt'), 'w') as f2:
+#         s2 = '\n'.join(['P' + (str(x)).zfill(4) for x in val_idx])
+#         f2.write(s2)
+#     with open(os.path.join(root_dir, 'ImageSets/test.txt'), 'w') as f3:
+#         s3 = '\n'.join(['P' + str(x).zfill(4) for x in test_idx])
+#         f3.write(s3)
 
 
 if __name__ == "__main__":
