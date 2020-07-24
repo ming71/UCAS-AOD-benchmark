@@ -1,5 +1,5 @@
 # UCAS-AOD-benchmark
-**A benchmark of UCAS-AOD dataset. **(Only Oriented box is tested)
+**A benchmark of UCAS-AOD dataset**. (Only Oriented box is tested)
 
 More results  and PRs are welcomed **if you test with our imagesets** (for fair comparison).
 
@@ -45,7 +45,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 ...
 ```
 
-## Benchmark
+## Experiment
 
 ###  Environment
 * NVIDIA 2080 Ti
@@ -57,7 +57,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 * All models were trained with a batch size of 4, and totally 100 epochs.
 * lr is set to 0.0001, we first warm up for 500 iters, and adjust lr with step 70 and 90 epochs. 
 * we evaluate via **VOC07 metric** which is different DOTA and COCO. 
-
+### Benchmark
 | model | backbone | input_size | car | airplane | mAP |paper link |remarks |
 | :---: | :---: |:--------: | :--: | :------: | :--: |:-----: |:-----: |
 | Faster RCNN(OBB) | ResNet50 | 800*800 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
@@ -71,5 +71,5 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 
 ---
 
-If you have any problem about the benchmark or  the codes, pls contact me via [emal](mq_chaser@126.com) or issue, I will reply as soon as I see the message. 
+**Notes** : If you have any problem about the benchmark or  the codes, pls contact me via [emal](mq_chaser@126.com) or issue, I will reply as soon as I see the message. 
 
