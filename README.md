@@ -1,5 +1,5 @@
 # UCAS-AOD-benchmark
-**A benchmark of UCAS-AOD dataset.**
+**A benchmark of UCAS-AOD dataset. **(Only Oriented box is tested)
 
 More results  and PRs are welcomed **if you test with our imagesets** (for fair comparison).
 
@@ -65,7 +65,9 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 
 ## Some Results
 
+![car](https://github.com/ming71/UCAS-AOD-benchmark/blob/master/examples/P0003.jpg)
 
+![airplane](https://github.com/ming71/UCAS-AOD-benchmark/blob/master/examples/P1114.jpg)
 
 ---
 
