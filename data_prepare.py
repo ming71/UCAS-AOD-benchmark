@@ -59,6 +59,24 @@ def creat_tree(root_dir):
     rewrite_label(car_annos, os.path.join(root_dir, 'Annotations'))
     rewrite_label(airplane_annos, os.path.join(root_dir, 'Annotations'), True)
 
+
+def generate_test(root_dir):
+    setfile = os.path.join(root_dir, 'ImageSets/test.txt')
+    img_dir = os.path.join(root_dir, 'AllImages')
+    test_dir = os.path.join(root_dir, 'Test')
+    # os.makedirs(test_dir)
+    if not os.path.exists(setfile):
+        raise RuntimeError('{} is not founded!'.format(setfile))
+    with open(setfile, 'r') as f:
+        lines = f.readlines()
+        pbar = tqdm(lines)
+        for line in pbar:
+            pbar.set_description("Copying to Test dir...")
+            filename = line.strip()
+            src = os.path.join(img_dir, filename + '.png')
+            dst = os.path.join(test_dir, filename + '.png')
+            shutil.copyfile(src, dst)
+
 # DON'T run this function, casuse you cannot make sure the same result will be generated.
 # def generate_imageset_file(root_dir):
 #     split_ratio=[0.5, 0.2, 0.3]
@@ -86,6 +104,8 @@ def creat_tree(root_dir):
 
 
 if __name__ == "__main__":
-    root_dir = 'mycomputer/data/UCAS_AOD'
+    root_dir = '/data-tmp/UCAS_AOD/ma3/UCAS_AOD'
     creat_tree(root_dir)
+    generate_test(root_dir)
+
 

@@ -54,7 +54,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 ### Details
 
 * Model are Training on **trainset** , and test on testset, valset is used for parameter optimization. 
-* All models were trained with a batch size of 4, and totally 100 epochs.
+* All models were trained with a batch size of 4, and totally 100 epochs, and the trained models are available at  [Baidu Drive](https://pan.baidu.com/s/15xsvYr8AKr7hV62obK3tkg).
 * lr is set to 0.0001, we first warm up for 500 iters, and adjust lr with step 70 and 90 epochs. 
 * we evaluate via **VOC07 metric** which is different DOTA and COCO. 
 ### Benchmark
