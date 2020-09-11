@@ -1,11 +1,9 @@
 # UCAS-AOD-benchmark
 **A benchmark of UCAS-AOD dataset**. (Only Oriented box is tested)
 
-More results  and PRs are welcomed **if you test with our imagesets** (for fair comparison).
-
 ## Introduction
 
-There is no official division of the UCAS-AOD dataset, thus it's  troublesome to compare the performance on different models. This project is provided with a plan for dataset division, and you can directly make comparison with our test results if you adopt **the same division  strategy**.
+There is no official division of the UCAS-AOD dataset, thus it's  troublesome to compare the performance on different models. You can directly make comparison with our test results if you adopt **the same division  strategy**.
 
 ## Dataset repare
 
@@ -27,6 +25,10 @@ UCAS_AOD
 │   │	...
 │   └───P1510.txt       
 └───ImageSets   
+└───Test
+│   │   P0003.png
+│   │	...
+│   └───P1508.txt 
 └───CAR
 └───PLANE
 └───Neg
@@ -50,18 +52,22 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 ###  Environment
 * NVIDIA 2080 Ti
 * pytorch>1.1.0
+* CUDA 10.0
 
 ### Details
 
-* Model are Training on **trainset** , and test on testset, valset is used for parameter optimization. 
-* All models were trained with a batch size of 4, and totally 100 epochs, and the trained models are available at  [Baidu Drive](https://pan.baidu.com/s/15xsvYr8AKr7hV62obK3tkg).
-* lr is set to 0.0001, we first warm up for 500 iters, and adjust lr with step 70 and 90 epochs. 
-* we evaluate via **VOC07 metric** which is different DOTA and COCO. 
+* Models are Trained on **trainset** , and test on **testset**, valset is used for parameter optimization. 
+* All models were trained with a batch size of 4, totally 100 epochs, and the trained models are available at  [Baidu Drive](https://pan.baidu.com/s/15xsvYr8AKr7hV62obK3tkg).
+* lr is set to 0.0001 (Adam), we warm up lr for first 500 iters, and adjust lr with step 70 and 90 epochs. Finally, best weight will be tested and uploaded.
+* Data augment is adopted (random flip, hsv augment, translation, rotation).
+* All models are evaluated via **VOC07 metric** which is different DOTA and COCO. 
 ### Benchmark
 | model | backbone | input_size | car | airplane | mAP |paper link |remarks |
 | :---: | :---: |:--------: | :--: | :------: | :--: |:-----: |:-----: |
+| RetinaNet | ResNet50 | 800*800 | 84.64 | 90.51 | 87.57 |—— |code, 3anchors |
 | Faster RCNN(OBB) | ResNet50 | 800*800 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
 | RoI Transformer | ResNet50 | 800*800 | 87.99 | 89.90 | 88.95 | [CVPR2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
+| RetinaNet(DAL) | ResNet50 | 800*800 | 89.25 | 90.49 | 89.87 | —— | code, 3anchors |
 
 ## Some Results
 
@@ -71,5 +77,5 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 
 ---
 
-**Notes** : If you have any problem about the benchmark or  the codes, pls contact me via [emal](mq_chaser@126.com) or issue, I will reply as soon as I see the message. 
+**Notes** : More results  and PRs are welcomed if you test with imagesets division here.
 
