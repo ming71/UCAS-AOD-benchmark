@@ -67,7 +67,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 | RetinaNet | ResNet50 | 800*800 | 84.64 | 90.51 | 87.57 |—— |code, 3anchors |
 | Faster RCNN(OBB) | ResNet50 | 800*800 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
 | RoI Transformer | ResNet50 | 800*800 | 87.99 | 89.90 | 88.95 | [CVPR2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
-| RetinaNet(DAL) | ResNet50 | 800*800 | 89.25 | 90.49 | 89.87 | —— | code, 3anchors |
+| RetinaNet+DAL | ResNet50 | 800*800 | 89.25 | 90.49 | 89.87 | —— | [code](https://github.com/ming71/DAL) |
 
 ## Some Results
 
