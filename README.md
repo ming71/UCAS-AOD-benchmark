@@ -1,6 +1,8 @@
 # UCAS-AOD-benchmark
 **A benchmark of UCAS-AOD dataset**. (Only Oriented box is tested)
 
+To be continued...
+
 ## Introduction
 
 There is no official division of the UCAS-AOD dataset, thus it's  troublesome to compare the performance on different models. You can directly make comparison with our test results if you adopt **the same division  strategy**.
@@ -8,10 +10,9 @@ There is no official division of the UCAS-AOD dataset, thus it's  troublesome to
 ## Dataset repare
 
 1. Download  UCAS-AOD [dataset](https://hyper.ai/datasets/5419) .
-
 2. Unzip dataset package into your root_dir, and rename the folder to `UCAS_AOD`.
-
-3. Run `data_prepare.py `(modify the dataset dir to your own), and you will obtain directory as follow:
+3. Put our imageset files `train.txt`, `val.txt` and `test.txt` into `ImageSets` folder in `UCAS_AOD`.
+4. Run `data_prepare.py `(modify the dataset dir to your own), and you will obtain directory as follow:
 ```
 UCAS_AOD
 └───AllImages
@@ -24,7 +25,10 @@ UCAS_AOD
 │   │   P0002.txt
 │   │	...
 │   └───P1510.txt       
-└───ImageSets   
+└───ImageSets 
+│   │   train.txt
+│   │   val.txt
+│   └───test.txt  
 └───Test
 │   │   P0003.png
 │   │	...
@@ -34,7 +38,6 @@ UCAS_AOD
 └───Neg
 ```
 
-4. Put our imageset files `train.txt`, `val.txt` and `test.txt` into `ImageSets` folder.
 5. Train, eval and test you model according to `ImageSets`  settings.
 
 **notes**: The integrated dataset contains 1510 images, with train set 755, val set 302, test set 452(following DOTA division 5:2:3). Files are numbered from 1-1510, in which `1-510` are cars, `511-1510` are airplanes. Besides, classname is attached to label file in format of  `classname x1 y1 x2 y2 x3 y3 x4 y4 theta cx cy w h ` ,
@@ -58,16 +61,17 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 
 * Models are Trained on **trainset** , and test on **testset**, valset is used for parameter optimization. 
 * All models were trained with a batch size of 4, totally 100 epochs, and the trained models are available at  [Baidu Drive](https://pan.baidu.com/s/15xsvYr8AKr7hV62obK3tkg).
-* lr is set to 0.0001 (Adam), we warm up lr for first 500 iters, and adjust lr with step 70 and 90 epochs. Finally, best weight will be tested and uploaded.
+* `na` denotes number of anchors preset at each location of feature maps.
 * Data augment is adopted (random flip, hsv augment, translation, rotation).
-* All models are evaluated via **VOC07 metric** which is different DOTA and COCO. 
+* All models are evaluated via **VOC07 metric**. 
 ### Benchmark
-| model | backbone | input_size | car | airplane | mAP |paper link |remarks |
-| :---: | :---: |:--------: | :--: | :------: | :--: |:-----: |:-----: |
-| RetinaNet | ResNet50 | 800*800 | 84.64 | 90.51 | 87.57 |—— |code, 3anchors |
-| Faster RCNN(OBB) | ResNet50 | 800*800 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
-| RoI Transformer | ResNet50 | 800*800 | 87.99 | 89.90 | 88.95 | [CVPR2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
-| RetinaNet+DAL | ResNet50 | 800*800 | 89.25 | 90.49 | 89.87 | —— | [code](https://github.com/ming71/DAL) |
+| model | backbone | input_size | na | car | airplane | mAP |paper link |remarks |
+| :---: | :---: |:--------: | :--: | :------: | :--: |:-----: |:-----: | ----- |
+| RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |—— |[code]() |
+| Faster RCNN(OBB) | ResNet50 | 800*800 | 3 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
+| RoI Transformer | ResNet50 | 800*800 | 3 | 87.99 | 89.90 | 88.95 | [CVPR2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
+| DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49 | 89.87 | —— | [code](https://github.com/ming71/DAL) |
+| yolov3 | Darknet-53 |  |  |  |  |  |  | [code](https://github.com/JKBox/YOLOv3-quadrangle) |
 
 ## Some Results
 

@@ -49,7 +49,6 @@ def creat_tree(root_dir):
         raise RuntimeError('invalid dataset path!')
     os.mkdir(os.path.join(root_dir, 'AllImages'))
     os.mkdir(os.path.join(root_dir, 'Annotations'))
-    os.mkdir(os.path.join(root_dir, 'ImageSets'))
     car_imgs = glob.glob(os.path.join(root_dir, 'CAR/*.png'))
     car_annos = glob.glob(os.path.join(root_dir, 'CAR/P*.txt'))
     airplane_imgs = glob.glob(os.path.join(root_dir, 'PLANE/*.png'))
@@ -64,7 +63,7 @@ def generate_test(root_dir):
     setfile = os.path.join(root_dir, 'ImageSets/test.txt')
     img_dir = os.path.join(root_dir, 'AllImages')
     test_dir = os.path.join(root_dir, 'Test')
-    # os.makedirs(test_dir)
+    os.makedirs(test_dir)
     if not os.path.exists(setfile):
         raise RuntimeError('{} is not founded!'.format(setfile))
     with open(setfile, 'r') as f:
@@ -104,8 +103,7 @@ def generate_test(root_dir):
 
 
 if __name__ == "__main__":
-    root_dir = '/data-tmp/UCAS_AOD/ma3/UCAS_AOD'
+    root_dir = '/data-input/das_dota/UCAS_AOD'
     creat_tree(root_dir)
     generate_test(root_dir)
-
 
