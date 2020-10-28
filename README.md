@@ -60,18 +60,21 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 ### Details
 
 * Models are Trained on **trainset** , and test on **testset**, valset is used for parameter optimization. 
-* All models were trained with a batch size of 4, totally 100 epochs, and the trained models are available at  [Baidu Drive](https://pan.baidu.com/s/15xsvYr8AKr7hV62obK3tkg).
+* All models are available at  [Baidu Drive](https://pan.baidu.com/s/1TtJEY7dwvOOQpf61c9ATfg) with passward `sd4f`.
 * `na` denotes number of anchors preset at each location of feature maps.
 * Data augment is adopted (random flip, hsv augment, translation, rotation).
 * All models are evaluated via **VOC07 metric**. 
+* The papers and codes of DAL and CFM-Net will be made public after the papers are published.
 ### Benchmark
-| model | backbone | input_size | na | car | airplane | mAP |paper link |remarks |
-| :---: | :---: |:--------: | :--: | :------: | :--: |:-----: |:-----: | ----- |
-| RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |—— |[code]() |
-| Faster RCNN(OBB) | ResNet50 | 800*800 | 3 | 86.87 | 89.86 | 88.36 | —— | [code](https://github.com/dingjiansw101/AerialDetection) |
-| RoI Transformer | ResNet50 | 800*800 | 3 | 87.99 | 89.90 | 88.95 | [CVPR2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
-| DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49 | 89.87 | —— | [code](https://github.com/ming71/DAL) |
-| yolov3 | Darknet-53 |  |  |  |  |  |  | [code](https://github.com/JKBox/YOLOv3-quadrangle) |
+| model | backbone | input_size | na | car | airplane | mAP |paper link |remark |
+| :---: | :---: |:--------: | :--: | :--: |:-----: |------- |------- |------- |
+| R-Yolov3 | Darknet53 | 800*800 | 9 | 74.63 | 89.52 | 82.08 | [arxiv](https://arxiv.org/abs/1804.02767) |[code1](https://github.com/JKBox/YOLOv3-quadrangle), [code2](https://github.com/ming71/rotate-yolov3) |
+| R-RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Lin_Focal_Loss_for_ICCV_2017_paper.html) |[code](https://github.com/ming71/R-RetinaNet) |
+| Faster RCNN | ResNet50 | 800*800 | 3 | 86.87 | 89.86 | 88.36 | [CVPR 2018](https://arxiv.org/abs/1711.10398) | [code](https://github.com/dingjiansw101/AerialDetection) |
+| RoI Transformer | ResNet50 | 800*800 | 3 | 88.02 | 90.02 | 89.02 | [CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
+| CFM-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | —— | —— |
+| DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49    | 89.87 | —— | [code](https://github.com/ming71/DAL) |
+| S2ANet | ResNet50 | 800*800 | 1 | 89.56 | 90.42    | 89.99 | [arxiv](https://arxiv.org/pdf/2008.09397) | [code](https://github.com/csuhan/s2anet) |
 
 ## Some Results
 
