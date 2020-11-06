@@ -40,7 +40,7 @@ UCAS_AOD
 
 5. Train, eval and test you model according to `ImageSets`  settings.
 
-**notes**: The integrated dataset contains 1510 images, with train set 755, val set 302, test set 452(following DOTA division 5:2:3). Files are numbered from 1-1510, in which `1-510` are cars, `511-1510` are airplanes. Besides, classname is attached to label file in format of  `classname x1 y1 x2 y2 x3 y3 x4 y4 theta cx cy w h ` ,
+**notes**: The integrated dataset contains 1510 images, with train set 755, val set 302, test set 452(following DOTA division 5:2:3). Files are numbered from 1-1510, in which `1-510` are cars, `511-1510` are airplanes. Besides, classname is attached to label file in format of  `classname x1 y1 x2 y2 x3 y3 x4 y4 theta lx ly w h ` ,
 
 for example:
 
