@@ -72,7 +72,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 | R-RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Lin_Focal_Loss_for_ICCV_2017_paper.html) |[code](https://github.com/ming71/R-RetinaNet) |
 | Faster RCNN | ResNet50 | 800*800 | 3 | 86.87 | 89.86 | 88.36 | [CVPR 2018](https://arxiv.org/abs/1711.10398) | [code](https://github.com/dingjiansw101/AerialDetection) |
 | RoI Transformer | ResNet50 | 800*800 | 3 | 88.02 | 90.02 | 89.02 | [CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
-| CFM-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | —— | —— |
+| CFC-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | [arxiv](https://arxiv.org/abs/2101.06849) | [code](https://github.com/ming71/CFC-Net) |
 | DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49    | 89.87 | [AAAI 2021](https://arxiv.org/abs/2012.04150) | [code](https://github.com/ming71/DAL) |
 | S2ANet | ResNet50 | 800*800 | 1 | 89.56 | 90.42    | 89.99 | [arxiv](https://arxiv.org/pdf/2008.09397) | [code](https://github.com/csuhan/s2anet) |
 
