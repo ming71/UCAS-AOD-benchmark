@@ -71,11 +71,14 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 | R-RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Lin_Focal_Loss_for_ICCV_2017_paper.html) |[code](https://github.com/ming71/R-RetinaNet) |
 | Faster RCNN | ResNet50 | 800*800 | 3 | 86.87 | 89.86 | 88.36 | [CVPR 2018](https://arxiv.org/abs/1711.10398) | [code](https://github.com/dingjiansw101/AerialDetection) |
 | RoI Transformer | ResNet50 | 800*800 | 3 | 88.02 | 90.02 | 89.02 | [CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/papers/Ding_Learning_RoI_Transformer_for_Oriented_Object_Detection_in_Aerial_Images_CVPR_2019_paper.pdf) | [code](https://github.com/dingjiansw101/RoITransformer_DOTA) |
-| RIDet-Q | ResNet50 | 800*800 | 9 | 88.50 | 89.96 | 89.23 | [arxiv](https://arxiv.org/abs/2103.11636) | [code](https://github.com/ming71/RIDet) |
-| CFC-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | [arxiv](https://arxiv.org/abs/2101.06849) | [code](https://github.com/ming71/CFC-Net) |
-| RIDet-O | ResNet50 | 800*800 | 9 | 88.88 | 90.35 | 89.62 | [arxiv](https://arxiv.org/abs/2103.11636) | [code](https://github.com/ming71/RIDet) |
+| RIDet-Q | ResNet50 | 800*800 | 9 | 88.50 | 89.96 | 89.23 | [GRSL](https://ieeexplore.ieee.org/document/9555916) | [code](https://github.com/ming71/RIDet) |
+| SLA | ResNet50 | 800*800 | 9 | 88.57 | 90.30 | 89.44 | [RS](https://www.mdpi.com/2072-4292/13/14/2664) | [code](https://github.com/ming71/SLA) |
+| CFC-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | [TGRS](https://ieeexplore.ieee.org/abstract/document/9488629) | [code](https://github.com/ming71/CFC-Net) |
+| RIDet-O | ResNet50 | 800*800 | 9 | 88.88 | 90.35 | 89.62 | [GRSL](https://ieeexplore.ieee.org/document/9555916) | [code](https://github.com/ming71/RIDet) |
 | DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49    | 89.87 | [AAAI 2021](https://arxiv.org/abs/2012.04150) | [code](https://github.com/ming71/DAL) |
 | S2ANet | ResNet50 | 800*800 | 1 | 89.56 | 90.42    | 89.99 | [TGRS](https://arxiv.org/pdf/2008.09397) | [code](https://github.com/csuhan/s2anet) |
+
+
 
 ## Some Results
 
