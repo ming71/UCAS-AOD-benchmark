@@ -65,7 +65,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 * Data augment is adopted (random flip, hsv augment, translation, rotation).
 * All models are evaluated via **VOC07 metric**. 
 ### Benchmark
-| model | backbone | input_size | na | car | airplane | mAP |paper link |remark |
+| model | backbone | input_size | na | car | airplane | mAP |paper link |code |
 | :---: | :---: |:--------: | :--: | :--: |:-----: |------- |------- |------- |
 | R-Yolov3 | Darknet53 | 800*800 | 9 | 74.63 | 89.52 | 82.08 | [arxiv](https://arxiv.org/abs/1804.02767) |[code1](https://github.com/JKBox/YOLOv3-quadrangle), [code2](https://github.com/ming71/rotate-yolov3) |
 | R-RetinaNet | ResNet50 | 800*800 | 3 | 84.64 | 90.51 | 87.57 |[ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Lin_Focal_Loss_for_ICCV_2017_paper.html) |[code](https://github.com/ming71/R-RetinaNet) |
@@ -74,6 +74,7 @@ car  3.002141e+02	1.003123e+02	3.209637e+02	4.665470e+01	3.566901e+02	6.047021e+
 | RIDet-Q | ResNet50 | 800*800 | 9 | 88.50 | 89.96 | 89.23 | [GRSL](https://ieeexplore.ieee.org/document/9555916) | [code](https://github.com/ming71/RIDet) |
 | SLA | ResNet50 | 800*800 | 9 | 88.57 | 90.30 | 89.44 | [RS](https://www.mdpi.com/2072-4292/13/14/2664) | [code](https://github.com/ming71/SLA) |
 | CFC-Net | ResNet50 | 800*800 | 1 | 89.29 | 88.69    | 89.49 | [TGRS](https://ieeexplore.ieee.org/abstract/document/9488629) | [code](https://github.com/ming71/CFC-Net) |
+| TIOE-Det | ResNet50 | 800*800 | 9 | 88.83 | 90.15 | 89.49 | [ISPRS&RS2023](https://www.sciencedirect.com/science/article/pii/S0924271623000011) | [pytorch](https://github.com/ming71/TIOE) |
 | RIDet-O | ResNet50 | 800*800 | 9 | 88.88 | 90.35 | 89.62 | [GRSL](https://ieeexplore.ieee.org/document/9555916) | [code](https://github.com/ming71/RIDet) |
 | DAL | ResNet50 | 800*800 | 3 | 89.25 | 90.49    | 89.87 | [AAAI 2021](https://arxiv.org/abs/2012.04150) | [code](https://github.com/ming71/DAL) |
 | S2ANet | ResNet50 | 800*800 | 1 | 89.56 | 90.42    | 89.99 | [TGRS](https://arxiv.org/pdf/2008.09397) | [code](https://github.com/csuhan/s2anet) |
